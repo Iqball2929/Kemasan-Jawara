@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. Kemasan Jawara - Teman Scale Up UMKM</title>
+    <meta name="description"
+        content="PT. Kemasan Jawara menyediakan berbagai jenis kemasan berkualitas seperti standing pouch, box, sachet, dan center seal dengan harga bersaing.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#eb2525',
+                        secondary: '#e02626',
+                        accent: '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #b0a7a7;
+        }
+
+        /* 3D Card Effect */
+        .card-container {
+            perspective: 1000px;
+        }
+
+        .card-3d {
+            transition: transform 0.5s ease;
+            transform-style: preserve-3d;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .card-container:hover .card-3d {
+            transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
+            box-shadow: -20px 20px 30px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-img {
+            transition: transform 0.5s ease;
+            transform: translateZ(50px);
+        }
+
+        .card-container:hover .product-img {
+            transform: translateZ(80px) scale(1.05);
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #cd3333, #891717);
+        }
+    </style>
+</head>
+
+<body class="text-slate-800 antialiased selection:bg-primary selection:text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <img src="Gambar/logo.png.png" alt="Logo PT. Kemasan Jawara" class="h-10 w-auto object-contain">
+                    <span class="font-bold text-2xl tracking-tight text-slate-900">Kemasan Jawara</span>
+                </div>
+                <div class="flex items-center gap-8">
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#home"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors">Beranda</a>
+                        <a href="#products"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors">Produk</a>
+                        <a href="https://wa.me/62895386845990?text=Halo%20Admin%20PT.%20Kemasan%20Jawara,%20saya%20ingin%20bertanya%20seputar%20kemasan."
+                            target="_blank" rel="noopener noreferrer"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors">Kontak</a>
+                    </div>
+                    <div class="hidden md:flex">
+                        <a href="#products"
+                            class="bg-primary hover:bg-secondary text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Pesan
+                            Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[url('Gambar/promosi_kemasan_16_9.png')] bg-cover bg-center bg-no-repeat">
+            </div>
+            <div class="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6">
+                    Tingkatkan Nilai Produk dengan <span class="text-gradient">Kemasan Premium</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 mb-10">
+                    PT. Kemasan Jawara menghadirkan solusi kemasan full print untuk UMKM. Dari Standing Pouch hingga Box
+                    eksklusif, kami siap membuat produk Anda menonjol di pasaran.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a href="#products"
+                        class="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3.5 rounded-full font-semibold transition-all shadow-xl hover:shadow-2xl">Lihat
+                        Katalog</a>
+                    <a href="https://wa.me/62895386845990?text=Halo%20Admin%20PT.%20Kemasan%20Jawara,%20saya%20ingin%20berkonsultasi%20seputar%20kemasan."
+                        target="_blank" rel="noopener noreferrer"
+                        class="bg-white border-2 border-slate-200 hover:border-slate-300 text-slate-700 px-8 py-3.5 rounded-full font-semibold transition-all shadow-sm">Hubungi
+                        Kami</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Keunggulan Kami</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
+                <p class="text-slate-600 max-w-2xl mx-auto">Menyediakan jasa one day service, minimal order hanya 99
+                    pcs, ratusan pcs sudah bisa mendapatkan kemasan full color yang pasti kualitasnya sangat HD
+                    dan pengerjaannya juga pastinya sangat cepat.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <!-- Product 1: Standing Pouch Ziplock -->
+                <div class="card-container cursor-pointer group">
+                    <div
+                        class="card-3d relative bg-gradient-to-b from-slate-50 to-white rounded-2xl p-6 h-full border border-slate-100 flex flex-col">
+                        <div
+                            class="absolute top-4 right-4 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full z-20">
+                            Best Seller</div>
+                        <div
+                            class="h-64 bg-slate-100 rounded-xl mb-6 flex items-center justify-center overflow-hidden relative">
+                            <!-- Placeholder image, will be updated via JS/Agent if needed -->
+                            <img src="Gambar/Spouch Zipper.jpg" alt="Standing Pouch Ziplock"
+                                class="product-img object-cover w-full h-full mix-blend-multiply opacity-90">
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Standing Pouch Ziplock</h3>
+                        <p class="text-slate-500 text-sm mb-4 flex-grow">Kemasan praktis dengan klip penutup, menjaga
+                            kesegaran produk lebih lama.</p>
+                        <div class="flex justify-between items-end mt-auto pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="block text-xs text-slate-400 mb-1">Ukuran: 14x22 cm</span>
+                                <span class="text-2xl font-bold text-primary">Pesan Sekarang</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2: Standing Pouch Non Ziplock -->
+                <div class="card-container cursor-pointer group">
+                    <div
+                        class="card-3d relative bg-gradient-to-b from-slate-50 to-white rounded-2xl p-6 h-full border border-slate-100 flex flex-col">
+                        <div
+                            class="h-64 bg-slate-100 rounded-xl mb-6 flex items-center justify-center overflow-hidden relative">
+                            <img src="Gambar/Spouch_2.jpg" alt="Standing Pouch Non Ziplock"
+                                class="product-img object-cover w-full h-full mix-blend-multiply opacity-80 grayscale-[20%]">
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Standing Pouch Non Ziplock</h3>
+                        <p class="text-slate-500 text-sm mb-4 flex-grow">Solusi ekonomis untuk produk sekali pakai
+                            dengan tampilan elegan.</p>
+                        <div class="flex justify-between items-end mt-auto pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="block text-xs text-slate-400 mb-1">Ukuran: 13x20 cm</span>
+                                <span class="text-2xl font-bold text-primary">Pesan Sekarang</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3: Center Seal Ziplock -->
+                <div class="card-container cursor-pointer group">
+                    <div
+                        class="card-3d relative bg-gradient-to-b from-slate-50 to-white rounded-2xl p-6 h-full border border-slate-100 flex flex-col">
+                        <div
+                            class="h-64 bg-slate-100 rounded-xl mb-6 flex items-center justify-center overflow-hidden relative">
+                            <img src="Gambar/Centerseal.jpg" alt="Center Seal Ziplock"
+                                class="product-img object-cover w-full h-full mix-blend-multiply opacity-90">
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Center Seal Ziplock</h3>
+                        <p class="text-slate-500 text-sm mb-4 flex-grow">Segel tengah yang kokoh dipadukan dengan
+                            kemudahan ziplock.</p>
+                        <div class="flex justify-between items-end mt-auto pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="block text-xs text-slate-400 mb-1">Ukuran: 12x20 cm</span>
+                                <span class="text-2xl font-bold text-primary">Pesan Sekarang</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 4: Center Seal Non Ziplock -->
+                <div class="card-container cursor-pointer group">
+                    <div
+                        class="card-3d relative bg-gradient-to-b from-slate-50 to-white rounded-2xl p-6 h-full border border-slate-100 flex flex-col">
+                        <div
+                            class="h-64 bg-slate-100 rounded-xl mb-6 flex items-center justify-center overflow-hidden relative">
+                            <img src="Gambar/Centerseal non ziplock.jpg" alt="Center Seal Non Ziplock"
+                                class="product-img object-cover w-full h-full mix-blend-multiply opacity-80 grayscale-[20%]">
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Center Seal Non Ziplock</h3>
+                        <p class="text-slate-500 text-sm mb-4 flex-grow">Kemasan klasik yang terjamin kekedapannya,
+                            cocok untuk industri.</p>
+                        <div class="flex justify-between items-end mt-auto pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="block text-xs text-slate-400 mb-1">Ukuran: 15x25 cm</span>
+                                <span class="text-2xl font-bold text-primary">Pesan Sekarang</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 5: Sachet Ziplock -->
+                <div class="card-container cursor-pointer group">
+                    <div
+                        class="card-3d relative bg-gradient-to-b from-slate-50 to-white rounded-2xl p-6 h-full border border-slate-100 flex flex-col">
+                        <div
+                            class="h-64 bg-slate-100 rounded-xl mb-6 flex items-center justify-center overflow-hidden relative">
+                            <img src="Gambar/Sachet ziplock.jpg" alt="Sachet Ziplock"
+                                class="product-img object-cover w-full h-full mix-blend-multiply opacity-90">
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Sachet Ziplock</h3>
+                        <p class="text-slate-500 text-sm mb-4 flex-grow">Kecil, imut, namun fungsional dengan fitur
+                            buka-tutup (ziplock).</p>
+                        <div class="flex justify-between items-end mt-auto pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="block text-xs text-slate-400 mb-1">Ukuran: 10x15 cm</span>
+                                <span class="text-2xl font-bold text-primary">Pesan Sekarang</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 6: Sachet Non Ziplock -->
+                <div class="card-container cursor-pointer group">
+                    <div
+                        class="card-3d relative bg-gradient-to-b from-slate-50 to-white rounded-2xl p-6 h-full border border-slate-100 flex flex-col">
+                        <div
+                            class="h-64 bg-slate-100 rounded-xl mb-6 flex items-center justify-center overflow-hidden relative">
+                            <img src="Gambar/Sachet non ziplock.png" alt="Sachet Non Ziplock"
+                                class="product-img object-cover w-full h-full mix-blend-multiply opacity-80 grayscale-[20%]">
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Sachet Non Ziplock</h3>
+                        <p class="text-slate-500 text-sm mb-4 flex-grow">Pilihan paling tepat untuk sampel produk atau
+                            porsi single-use.</p>
+                        <div class="flex justify-between items-end mt-auto pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="block text-xs text-slate-400 mb-1">Ukuran: 8x12 cm</span>
+                                <span class="text-2xl font-bold text-primary">Pesan Sekarang</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 7: Box Packaging -->
+                <div class="card-container cursor-pointer group lg:col-span-3 md:col-span-2">
+                    <div
+                        class="card-3d relative bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 h-full border border-slate-700 flex flex-col md:flex-row items-center gap-8 overflow-hidden">
+                        <!-- Decorative glow -->
+                        <div
+                            class="absolute top-1/2 left-1/4 w-64 h-64 bg-primary/30 rounded-full blur-3xl transform -translate-y-1/2">
+                        </div>
+
+                        <div
+                            class="w-full md:w-1/2 h-64 md:h-80 bg-slate-800/50 rounded-xl flex items-center justify-center overflow-hidden relative z-10 border border-slate-600/50">
+                            <img src="Gambar/Box.jpg" alt="Box Packaging"
+                                class="product-img object-cover w-full h-full opacity-90">
+                        </div>
+                        <div class="w-full md:w-1/2 z-10">
+                            <div
+                                class="inline-block bg-accent text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
+                                Premium Quality</div>
+                            <h3 class="text-3xl font-bold text-white mb-4">Box Packaging Eksklusif</h3>
+                            <p class="text-slate-300 text-lg mb-6">Tingkatkan prestise produk Anda dengan kemasan box
+                                kokoh berdesain mewah. Sangat cocok untuk produk premium, elektronik, atau hampers.</p>
+                            <div
+                                class="bg-slate-800/50 rounded-lg p-4 border border-slate-700/50 flex justify-between items-center backdrop-blur-sm">
+                                <div>
+                                    <span class="block text-sm text-slate-400 mb-1">Ukuran Standard: 22x22x8 cm</span>
+                                </div>
+                                <button
+                                    class="bg-primary hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-medium transition-colors">Pesan
+                                    Box</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center gap-2 mb-6 md:mb-0">
+                <img src="Gambar/logo.png.png" alt="Logo PT. Kemasan Jawara" class="h-8 w-auto object-contain">
+                <span class="font-bold text-xl text-white">PT. Kemasan Jawara</span>
+            </div>
+            <p class="text-sm">&copy; 2026 PT. Kemasan Jawara. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Order Modal -->
+    <div id="orderModal"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm transition-opacity">
+        <div class="bg-white rounded-2xl p-6 w-full max-w-md shadow-2xl transform transition-all">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-slate-900" id="modalTitle">Pesan Produk</h3>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <p class="text-sm text-slate-500 mb-4">Silakan tentukan spesifikasi pesanan Anda. Kami akan meneruskan
+                detail ini ke WhatsApp Admin.</p>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Ukuran</label>
+                    <select id="modalSize"
+                        class="w-full border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-primary focus:border-primary outline-none text-slate-700">
+                        <option value="Kecil (10x15 cm)">Kecil (10x15 cm)</option>
+                        <option value="Sedang (14x22 cm)">Sedang (14x22 cm)</option>
+                        <option value="Besar (20x25 cm)">Besar (20x25 cm)</option>
+                        <option value="Custom Ukuran">Custom Ukuran / Konsultasi</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Jumlah (Pcs)</label>
+                    <input type="number" id="modalQty" min="100" step="100" value="100"
+                        class="w-full border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-primary focus:border-primary outline-none text-slate-700">
+                    <p class="text-xs text-slate-500 mt-1">*Minimum pemesanan biasanya 100 pcs</p>
+                </div>
+                <div class="pt-2">
+                    <button onclick="submitOrder()"
+                        class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg flex justify-center items-center gap-2 transition-colors shadow-lg hover:shadow-xl">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 001.333 4.976l-1.5 5.371 5.642-1.467a10.016 10.016 0 004.514 1.09h.004c5.505 0 9.988-4.478 9.989-9.984 0-5.504-4.484-9.97-9.992-9.97zM17.474 16.592c-.225.625-1.28.115-1.741-.016-.459-.13-1.455-.426-2.73-1.685-1.266-1.251-1.76-2.503-1.92-2.91-.161-.407-.152-.774-.017-1.127.135-.354.406-.576.621-.806.215-.23.366-.356.551-.572.185-.215.118-.465.017-.68-.101-.215-.658-1.583-.902-2.167-.238-.57-.48-.493-.658-.503-.173-.008-.37-.01-.568-.01-.198 0-.518.074-.789.37-.27.296-1.037 1.013-1.037 2.47 0 1.457 1.062 2.868 1.21 3.065.148.198 2.086 3.187 5.05 4.467 2.964 1.28 2.964.855 3.504.805.54-.05 1.744-.71 1.992-1.398.248-.688.248-1.28.174-1.405-.074-.125-.27-.198-.568-.347z" />
+                        </svg>
+                        Pesan via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vanilla Javascript for extra 3D mouse tracking effect -->
+    <script>
+        document.querySelectorAll('.card-container').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = ((y - centerY) / centerY) * -10;
+                const rotateY = ((x - centerX) / centerX) * 10;
+
+                const card3d = card.querySelector('.card-3d');
+                card3d.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                const card3d = card.querySelector('.card-3d');
+                card3d.style.transform = `rotateX(0) rotateY(0) translateY(0)`;
+            });
+        });
+
+        // --- Fitur Pemesanan (Modal Popup) ---
+        let currentProduct = '';
+        const modal = document.getElementById('orderModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSize = document.getElementById('modalSize');
+        const modalQty = document.getElementById('modalQty');
+
+        // Nomor WhatsApp Admin (Ganti sesuai kebutuhan)
+        const waNumber = "62895386845990";
+
+        // Pasang event click ke semua produk
+        document.querySelectorAll('.card-container, button.bg-primary').forEach(item => {
+            item.addEventListener('click', (e) => {
+                // Cegah modal terbuka jika yang di klik adalah elemen link <a>
+                if (e.target.tagName === 'A') return;
+
+                let titleElement = item.querySelector('h3');
+
+                // Jika yang diklik tombol khusus box packaging
+                if (!titleElement && item.tagName === 'BUTTON') {
+                    const parentSection = item.closest('div.w-full');
+                    if (parentSection) titleElement = parentSection.querySelector('h3');
+                }
+
+                if (titleElement) {
+                    currentProduct = titleElement.innerText;
+                    modalTitle.innerText = "Pesan " + currentProduct;
+
+                    // Update dropdown ukuran secara dinamis
+                    if (currentProduct.toLowerCase().includes("box")) {
+                        modalSize.innerHTML = `
+                            <option value="Kecil (15x15x5 cm)">Kecil (15x15x5 cm)</option>
+                            <option value="Sedang (22x22x8 cm)">Sedang (22x22x8 cm)</option>
+                            <option value="Besar (30x30x10 cm)">Besar (30x30x10 cm)</option>
+                            <option value="Custom Ukuran Khusus Box Atau Jenis Box">Custom Ukuran Khusus Box Atau Jenis Box</option>
+                        `;
+                    } else {
+                        modalSize.innerHTML = `
+                            <option value="Kecil (10x15 cm)">Kecil (10x15 cm)</option>
+                            <option value="Sedang (14x22 cm)">Sedang (14x22 cm)</option>
+                            <option value="Besar (20x25 cm)">Besar (20x25 cm)</option>
+                            <option value="Custom Ukuran / Konsultasi">Custom Ukuran / Konsultasi</option>
+                        `;
+                    }
+
+                    modal.classList.remove('hidden');
+                }
+            });
+        });
+
+        // Fungsi tutup modal
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        // Fungsi kirim ke WhatsApp
+        function submitOrder() {
+            const size = modalSize.value;
+            const qty = modalQty.value;
+
+            // Format Pesan WhatsApp
+            const message = `Halo Admin PT. Kemasan Jawara,%0A%0ASaya ingin memesan produk berikut:%0A*Produk:* ${currentProduct}%0A*Ukuran:* ${size}%0A*Jumlah:* ${qty} pcs%0A%0AMohon info lebih lanjut mengenai ketersediaan dan harga total. Terima kasih.`;
+
+            const waUrl = `https://wa.me/${waNumber}?text=${message}`;
+            window.open(waUrl, '_blank');
+            closeModal();
+        }
+
+        // Tutup modal jika user mengklik area di luar kotak putih
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>
